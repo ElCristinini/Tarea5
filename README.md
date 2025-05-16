@@ -6,14 +6,7 @@ Este proyecto implementa un carro virtual que sigue una pista utilizando sensore
 
 ## 🎥 Demostración en video
 
-> ⚠️ GitHub no permite reproducción embebida de video directamente en el README. Sin embargo, si estás viendo este archivo desde una página web (como GitHub Pages), el video se mostrará a continuación:
-
-<video width="720" controls>
-  <source src="Video De Carrito Seguidor.mkv" type="video/x-matroska">
-  Tu navegador no puede reproducir este video.
-</video>
-
-O simplemente [descárgalo aquí](./Video De Carrito Seguidor.mkv)
+> ⚠️ GitHub no permite reproducción embebida de video directamente en el README. Sin embargo, si estás viendo este archivo desde una página web (como GitHub Pages), el video se reproducira a continuacion, sino, arriba en los archivos aparecera el vide, entras, y le das en donde dice view raw, ahi se descargara y lo podras ver
 
 ---
 
