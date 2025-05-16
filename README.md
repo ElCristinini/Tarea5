@@ -13,7 +13,7 @@ Este proyecto implementa un carro virtual que sigue una pista utilizando sensore
   Tu navegador no puede reproducir este video.
 </video>
 
-O simplemente [descárgalo aquí](./Video%20De%20Carrito%20Seguidor.mkv)
+O simplemente [descárgalo aquí](./Video De Carrito Seguidor.mkv)
 
 ---
 
