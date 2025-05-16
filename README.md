@@ -1,6 +1,19 @@
 # 🚗 Carro Seguidor de Línea (Tkinter + PID + Docker)
 
-Este proyecto implementa un carro virtual que sigue una pista utilizando sensores simulados y un controlador PID. Usa **Tkinter** para mostrar la GUI y está preparado para correr en **Docker**, con opción de ser publicado en **Docker Hub** y alojado en **GitHub**.
+Este proyecto implementa un carro virtual que sigue una pista utilizando sensores simulados y un controlador PID. Usa *Tkinter* para mostrar la GUI y está preparado para correr en *Docker*, con opción de ser publicado en **Docker Hub** y alojado en *GitHub*.
+
+---
+
+## 🎥 Demostración en video
+
+> ⚠️ GitHub no permite reproducción embebida de video directamente en el README. Sin embargo, si estás viendo este archivo desde una página web (como GitHub Pages), el video se mostrará a continuación:
+
+<video width="720" controls>
+  <source src="Video De Carrito Seguidor.mkv" type="video/x-matroska">
+  Tu navegador no puede reproducir este video.
+</video>
+
+O simplemente [descárgalo aquí](./Video%20De%20Carrito%20Seguidor.mkv)
 
 ---
 
@@ -10,6 +23,7 @@ Este proyecto implementa un carro virtual que sigue una pista utilizando sensore
 carro_seguidor_docker/
 ├── CarroFinal.py        # Código fuente con el PID y GUI
 ├── Dockerfile           # Imagen Docker para ejecutar con entorno gráfico
+├── Video De Carrito Seguidor.mkv  # Video de demostración
 └── README.md            # Documentación del proyecto
 ```
 
