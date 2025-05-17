@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 FROM python:3.10-slim
 
 # Instalar Tkinter y librerías gráficas necesarias
@@ -32,3 +33,18 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 CMD ["python", "JueguitoNavesita.py"]
 >>>>>>> 0d7be45 (Segunda parte de tarea 5)
+=======
+FROM ros:noetic
+WORKDIR /ros_ws
+
+COPY talker.py .
+COPY listener.py .
+COPY start_talker.sh .
+
+RUN apt-get update && apt-get install -y python3-pip && \
+    pip3 install rospkg catkin_pkg
+
+RUN chmod +x start_talker.sh
+
+CMD ["bash"]
+>>>>>>> 646958a (Archivos Parte 3 tarea 5, con grabacion)
