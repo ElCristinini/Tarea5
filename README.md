@@ -1,41 +1,51 @@
-# Tarea 5 – Sistemas Operativos
+# 🧠 Tarea 5 – Sistemas Operativos
 
-**Autor:** @Cristian039
+**Autores:** Cristian Olarte y Ana Vargas  
 **Fecha:** Mayo 2025
 
 ---
 
-## 🚗 Carro Seguidor de Línea (Tkinter + PID + Docker)
+## 🚗 Carro Seguidor de Línea  
+**Tecnologías:** Tkinter · PID · Docker
 
-Este proyecto implementa un carro virtual que sigue una pista utilizando sensores simulados y un controlador PID. Usa Tkinter para mostrar la GUI y está preparado para correr en Docker, con opción de ser publicado en Docker Hub y alojado en GitHub.
+Este módulo simula un carro virtual que sigue una pista usando sensores simulados y un controlador PID. Se visualiza en una GUI desarrollada con Tkinter y está preparado para ejecutarse dentro de un contenedor Docker.
+
+---
 
 ### 🎥 Demostración en video
 
-⚠️ GitHub no permite reproducción embebida de video directamente en el README. Sin embargo, si estás viendo este archivo desde una página web (como GitHub Pages), el video se reproducirá a continuación. Si no, arriba en los archivos aparecerá el video: entra y haz clic en "View Raw" para descargarlo y verlo.
+> ⚠️ GitHub no permite reproducir videos directamente en el README.  
+> Si estás viendo este archivo en GitHub, busca el archivo `Video De Carrito Seguidor.mkv`, haz clic en **“View Raw”** para descargarlo y reproducirlo localmente.
 
-### 📁 Estructura del proyecto
+---
+
+### 📁 Estructura del Proyecto
 
 ```
 carro_seguidor_docker/
-├── CarroFinal.py                 # Código fuente con el PID y GUI
-├── Dockerfile                    # Imagen Docker para ejecutar con entorno gráfico
+├── CarroFinal.py                   # Código fuente principal (PID + GUI)
+├── Dockerfile                      # Imagen Docker con entorno gráfico
 ├── Video De Carrito Seguidor.mkv  # Video de demostración
-└── README.md                     # Documentación del proyecto
+└── README.md                       # Documentación del proyecto
 ```
+
+---
 
 ### 🔧 Requisitos para ejecución local
 
-* Python 3.10 o superior
-* Tkinter instalado (incluido en la mayoría de distribuciones)
-* Linux, Windows o WSL2 con entorno gráfico
+- Python 3.10 o superior  
+- Tkinter instalado  
+- Sistema operativo con entorno gráfico (Linux, Windows o WSL2)
 
-### ▶️ Ejecución local
+---
+
+### ▶️ Cómo ejecutar localmente
 
 ```bash
 python CarroFinal.py
 ```
 
-El programa abrirá una ventana con el carro recorriendo la pista. Está diseñado para seguir una línea negra sobre fondo claro.
+---
 
 ### 🐳 Construcción y ejecución con Docker
 
@@ -45,7 +55,7 @@ El programa abrirá una ventana con el carro recorriendo la pista. Está diseña
 docker build -t carro_gui .
 ```
 
-#### 🚀 Ejecución (en Linux con GUI y X11)
+#### 🚀 Ejecución en Linux con entorno gráfico
 
 ```bash
 xhost +local:root
@@ -57,7 +67,7 @@ docker run -it \
   carro_gui
 ```
 
-#### 🩟 En Windows con XServer (VcXsrv o X410)
+#### 🪟 En Windows (con VcXsrv o X410)
 
 ```bash
 docker run -it \
@@ -66,6 +76,8 @@ docker run -it \
   carro_gui
 ```
 
+---
+
 ### ☁️ Subir imagen a Docker Hub
 
 ```bash
@@ -73,6 +85,8 @@ docker login
 docker tag carro_gui cristian039/carro-seguidor:latest
 docker push cristian039/carro-seguidor:latest
 ```
+
+---
 
 ### ⬇️ Descargar y ejecutar desde Docker Hub
 
@@ -85,27 +99,20 @@ docker run -it \
   cristian039/carro-seguidor
 ```
 
-### 🧠 Características del código
-
-* Simulación gráfica con sensores y ruedas
-* Control PID con suavizado de movimiento
-* Pista curva personalizada
-* Parada en estaciones (ej. “Control”)
-* Optimizado para entorno Docker + GUI
-
 ---
 
-## 🌌 Juego Galaxy Rush (Pygame + Boss + Power-ups)
+## 🌌 Galaxy Rush – Juego de Naves  
+**Tecnologías:** Pygame · Docker
 
-Se personalizó el juego base de naves espaciales con:
+Juego personalizado con:
 
-* Imágenes personalizadas para nave, enemigos, disparos y fondo.
-* Aparición de jefe (boss alien verde) cuando se alcanza cierto puntaje.
-* Sistema de power-ups: velocidad, disparo doble, disparo rápido.
-* Sistema de puntuación, vidas, y colisiones.
-* Juego contenedorizado y subido a Docker Hub.
+- Imágenes únicas para naves, enemigos, disparos y fondos  
+- Aparición de jefe (boss alien verde)  
+- Power-ups: velocidad, disparo doble, disparo rápido  
+- Sistema de vidas, colisiones y puntuación  
+- Contenedor Docker listo para usar
 
-### Docker:
+### 🐳 Docker
 
 ```bash
 docker pull cristian039/galaxy-rush:latest
@@ -118,42 +125,36 @@ docker run -it \
 
 ---
 
-## 🧐 ROS (Robot Operating System) en Docker: Talker + Listener
+## 🤖 ROS en Docker: Talker & Listener  
+**Tecnologías:** ROS Noetic · Docker
 
-Se construyó un ejemplo básico con:
+Implementación básica de dos nodos:
 
-* Nodo `talker.py`: publica mensajes "Hola desde ROS en Docker"
-* Nodo `listener.py`: escucha y responde mostrando en consola
-* Todo ejecutado sobre la imagen `ros:noetic` en Docker
+- `talker.py`: publica mensajes
+- `listener.py`: recibe y muestra mensajes
 
-### Ejecución paso a paso:
+### 🔧 Ejecución
 
-1. Correr contenedor con `talker` y `roscore`:
+1. Iniciar contenedor con `talker`:
 
 ```bash
 docker run -it --name tarea5 cristian039/ros-tarea5 ./start_talker.sh
 ```
 
-2. En otra terminal, ejecutar el listener:
+2. En otra terminal:
 
 ```bash
 docker exec -it tarea5 bash -c "source /opt/ros/noetic/setup.bash && python3 listener.py"
 ```
 
-3. Ver salida tipo:
+> 🎥 El video `video de Ros, comprobacion.mkv` muestra la ejecución. Descárgalo desde GitHub si es necesario.
 
-```
-[INFO]: Listener recibió: Hola desde ROS en Docker
-```
-### 🎥 Demostración en video
-
-⚠️ GitHub no permite reproducción embebida de video directamente en el README. Sin embargo, si estás viendo este archivo desde una página web (como GitHub Pages), el video se reproducirá a continuación. Si no, arriba en los archivos aparecerá el video: entra y haz clic en "View Raw" para descargarlo y verlo, se llamara video de Ros, comprobacion.
 ---
 
-## 🧑‍💻 Autor
+## 👥 Créditos
 
-Cristian039
-Proyecto educativo desarrollado para la Tarea 5 del curso de Sistemas Operativos.
-Incluye simulación gráfica, comunicación entre procesos y contenedores Docker aplicados a interfaces gráficas y robótica.
+Cristian Olarte y Ana Vargas  
+Proyecto educativo para la asignatura **Sistemas Operativos – Tarea 5**.  
+Incluye simulaciones gráficas, comunicación entre procesos y ejecución con Docker.
 
 ---
